@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1c1e21;
+    margin-bottom: 0.5rem;
+}
+
+.status-display {
+    font-size: 1.2rem;
+    min-height: 1.5em;
+    margin-bottom: 1rem;
+    color: #606770;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 1rem auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #e4e6eb;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+    background-color: #d8dbdf;
+}
+
+.cell.x {
+    color: #007bff; /* Blue for X */
+}
+
+.cell.o {
+    color: #dc3545; /* Red for O */
+}
+
+.restart-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.restart-button:hover {
+    background-color: #0056b3;
+}
+
+.restart-button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .game-board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 8px;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
